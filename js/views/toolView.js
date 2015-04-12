@@ -29,11 +29,11 @@ function($, _, Backbone, Fonts, Carousel) {
 		},
 		showDark: function(e) {
 			$('.theme i').toggleClass('selected');
-			$('body').addClass("dark");
+			$('html').addClass("dark");
 		},
 		showLight: function(e) {
 			$('.theme i').toggleClass('selected');
-			$('body').removeClass("dark");
+			$('html').removeClass("dark");
 		},
 		setFontSize: function() {
 			var newFontSize = $("#font-size-range").val() + 'px';

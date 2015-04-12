@@ -7,11 +7,14 @@ html, body {
 	font-family: 'Lato', sans-serif;
 	font-weight: 200;
 	text-align: center;
+}
+
+html {
 	background: #F9F7F2;
 	color: #2F2D27;
 }
 
-body.dark {
+html.dark {
 	background: #49535C;
 	color: #fff;
 }
@@ -38,6 +41,11 @@ h4 {
 	font-size: 18px;
 	font-family: Lato;
 	font-weight: 400;
+}
+.master-menu {
+	float: right;
+	text-align: right;
+	opacity: 0.7;
 }
 
 .page-wrap {
