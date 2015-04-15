@@ -14,6 +14,6 @@ require(
 ],
 function($, App) {
     $(function() {
-        App.init();
+        App.start();
     });
 });

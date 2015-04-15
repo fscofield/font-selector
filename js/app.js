@@ -1,28 +1,48 @@
 define(
 [
 'jquery',
-'underscore',
 'backbone',
+'marionette',
 'fonts',
-'carousel',
-'views/toolView',
-'views/carouselView',
+'views/paragraphLayout',
+'views/fontwallLayout'
 ],
-function($, _, Backbone, Fonts, Carousel, ToolView, CarouselView) {
-	var toolView = new ToolView(),
-		carouselView = new CarouselView();
+function($, Backbone, Marionette, Fonts, ParagraphLayout, FontwallLayout) {
 
+	App = new Marionette.Application();
 
-	return {
-		regions: {
-			tools: toolView,
-			carousel: carousel
-		},
-		init: function(){
-			Fonts.instance().fetch().done(function(){
-				Carousel.loadFontsAtIndex();
-				carouselView.render();
-			});
-		}
-	}
+    App.addInitializer(function(options) {
+        App.addRegions({
+            'content': '#content',
+            'sidemenu': '#sidemenu',
+        });
+    });
+
+    App.on("start", function() {
+      document.title = 'Font Forrest';
+
+      Fonts.fetch().then(function(){
+          App.content.show(new ParagraphLayout());
+      });
+
+      $('.show-font-wall').click(function(){
+        App.content.show(new FontwallLayout());
+      });
+
+      $('.show-paragraph').click(function(){
+        App.content.show(new ParagraphLayout());
+      })
+
+      $(document).on("click", "a:not([data-bypass])", function(evt) {
+        var href = { prop: $(this).prop("href"), attr: $(this).attr("href") };
+        var root = location.protocol + "//" + location.host;
+
+        if (href.prop && href.prop.slice(0, root.length) === root) {
+          evt.preventDefault();
+          Backbone.history.navigate(href.attr, true);
+        }
+      });
+    });
+
+    return App;
 });

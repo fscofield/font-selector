@@ -2,12 +2,11 @@ define(
 [
 'jquery',
 'underscore',
-'backbone',
-'carousel'
+'carousel',
+'views/baseItemView'
 ],
-function($, _, Backbone, Carousel) {
-	return Backbone.View.extend({
-		el: "#carousel",
+function($, _, Carousel, BaseItemView) {
+	return BaseItemView.extend({
 		template: "#carousel-font-template",
 		initialize: function() {
 			this.compiledTemplate = _.template($(this.template).html());
@@ -32,7 +31,7 @@ function($, _, Backbone, Carousel) {
 			this.$el.html(this.compiledTemplate({
 				fonts: Carousel.fonts
 			}));
-			$(".preview-text").css("font-family", Carousel.fonts.at(1).get("family"));
+			$(".paragraph").css("font-family", Carousel.fonts.at(1).get("family"));
 		}
 	});
 });

@@ -2,78 +2,72 @@
 <html>
 <head>
 	<title>Forrest Scofield</title>
-	<!-- <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic|Open+Sans:400italic,600italic,700italic,800italic,400,600,700,800' rel='stylesheet' type='text/css'> -->
 	<link rel="stylesheet" type="text/css" href="reset.css">
 	<link rel="stylesheet" type="text/css" href="font-style.css">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<meta name="twitter:site" content="@fscof">
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<meta charset="UTF-8">
-	<style id="font-styles">
-	</style>
+	<style id="font-styles"></style>
 </head>
 
 <body>
-	<ul class="master-menu">
-		<li>Paragraph</li>
-		<li> Font Wall</li>
-	</ul>
-	<div class="page-wrap">
-		<header>
-			<div class="carousel-wrap cf">
-				<div class="previous">
-					<i class="fa fa-chevron-left"></i>
-				</div>
-				<div id="carousel">
-
-				</div>
-				<div class="next">
-					<i class="fa fa-chevron-right"></i>
-				</div>
-			</div>
-			<div id="tools" class="tools">
-				<ul class="cf">
-					<li class="style">
-						style: <span class="current-style">Serif</span>
-						<i class="fa fa-angle-down"></i>
-						<ul>
-							<li data-style="all">All</li>
-							<li data-style="serif">Serif</li>
-							<li data-style="sans-serif">Sans-Serif</li>
-							<li data-style="">Display</li>
-							<li data-style="">Handwritting</li>
-						</ul>
-					</li>
-					<li class="font-size">
-						<i class="fa fa-font"></i> <span>16px</span>
-						<input type="range" id="font-size-range" max="48" min="8" value="16">
-					</li>
-					<li class="line-height">
-						<i class="fa fa-text-height"></i> <span>16px</span>
-						<input type="range" id="line-height-range" max="56" min="16" value="16">
-					</li>
-					<li class="theme">
-						<div class="cf">
-							<i class="fa fa-moon-o"></i>
-							<i class="fa fa-sun-o selected"></i>
-						</div>
-					</li>
-				</ul>
-			</div>
-		</header>
-
-		<div class="preview-text">
-			<h1>The Metamorphisis</h1>
-
-			<p class="first-paragraph">As Gregor Samsa awoke one morning from uneasy dreams he found himself transformed in his bed into a gigantic insect. He was lying on his hard, as it were armor-plated, back and when he lifted his head a little he could see his domelike brown belly divided into stiff arched segments on top of which the bed quilt could hardly stay in place and was about to slide off completely. His numerous legs, which were pitifully thin compared to the rest of his bulk, waved helplessly before his eyes.</p>
-			<p>What has happened to me? he thought. It was no dream. His room, a regular human bedroom, only rather too small, lay quiet within its four familiar walls. Above the table on which a collection of cloth samples was unpacked and spread out—Samsa was a traveling salesman—hung the picture which he had recently cut out of an illustrated magazine and put into a pretty gilt frame. It showed a lady, with a fur hat on and a fur stole, sitting upright and holding out to the spectator a huge fur muff into which the whole of her forearm had vanished!</p>
-			<p>Gregor's eyes turned next to the window, and the overcast sky—one could hear raindrops beating on the window gutter—made him quite melancholy. What about sleeping a little longer and forgetting all this nonsense, he thought, but it could not be done, for he was accustomed to sleep on his right side and in his present condition he could not turn himself over. However violently he forced himself toward his right side he always rolled onto his back again. He tried it at least a hundred times, shutting his eyes to keep from seeing his struggling legs, and only desisted when he began to feel in his side a faint dull ache he had never felt before.</p>
-			<p>Oh God, he thought, what an exhausting job I've picked out for myself! On the road day in, day out. It's much more irritating work than doing the actual business in the home office, and on top of that there's the trouble of constant traveling, of worrying about train connections, the bad food and irregular meals, casual acquaintances that are always new and never become intimate friends. The devil take it all! He felt a slight itching up on his belly, slowly pushed himself on his back nearer to the top of the bed so that he could lift his head more easily, identified the itching place which was surrounded by many small white spots the nature of which he could not understand and was about to touch it with a leg, but drew the leg back immediately, for the contact made a cold shiver run through him.</p>
-
-		</div>
+	<div id="sidemenu">
+		<ul class="master-menu">
+			<li class="show-paragraph">Paragraph</li>
+			<li class="show-font-wall">Font Wall</li>
+		</ul>
 	</div>
-	<!-- // <script src="js/forrest.js"></script> -->
-	<script data-main="js/main" src="http://requirejs.org/docs/release/2.1.17/minified/require.js"></script>
+	<div id="content" class="page-wrap">
+	</div>
+
+	<script type="text/template" id="paragraph-layout-template">
+		<div class="paragraph-wrap">
+			<section class="carousel"></section>
+			<section class="tools"></section>
+			<section class="paragraph">
+				<h1>The Metamorphisis</h1>
+
+				<p class="first-paragraph">As Gregor Samsa awoke one morning from uneasy dreams he found himself transformed in his bed into a gigantic insect. He was lying on his hard, as it were armor-plated, back and when he lifted his head a little he could see his domelike brown belly divided into stiff arched segments on top of which the bed quilt could hardly stay in place and was about to slide off completely. His numerous legs, which were pitifully thin compared to the rest of his bulk, waved helplessly before his eyes.</p>
+				<p>What has happened to me? he thought. It was no dream. His room, a regular human bedroom, only rather too small, lay quiet within its four familiar walls. Above the table on which a collection of cloth samples was unpacked and spread out—Samsa was a traveling salesman—hung the picture which he had recently cut out of an illustrated magazine and put into a pretty gilt frame. It showed a lady, with a fur hat on and a fur stole, sitting upright and holding out to the spectator a huge fur muff into which the whole of her forearm had vanished!</p>
+				<p>Gregor's eyes turned next to the window, and the overcast sky—one could hear raindrops beating on the window gutter—made him quite melancholy. What about sleeping a little longer and forgetting all this nonsense, he thought, but it could not be done, for he was accustomed to sleep on his right side and in his present condition he could not turn himself over. However violently he forced himself toward his right side he always rolled onto his back again. He tried it at least a hundred times, shutting his eyes to keep from seeing his struggling legs, and only desisted when he began to feel in his side a faint dull ache he had never felt before.</p>
+				<p>Oh God, he thought, what an exhausting job I've picked out for myself! On the road day in, day out. It's much more irritating work than doing the actual business in the home office, and on top of that there's the trouble of constant traveling, of worrying about train connections, the bad food and irregular meals, casual acquaintances that are always new and never become intimate friends. The devil take it all! He felt a slight itching up on his belly, slowly pushed himself on his back nearer to the top of the bed so that he could lift his head more easily, identified the itching place which was surrounded by many small white spots the nature of which he could not understand and was about to touch it with a leg, but drew the leg back immediately, for the contact made a cold shiver run through him.</p>
+			</section>
+		</div>
+	</script>
+
+	<script type="text/template" id="tools-template">
+		<ul class="cf">
+			<li class="style">
+				style:
+				<span class="current-style">Serif</span>
+				<i class="fa fa-angle-down"></i>
+				<ul>
+					<li data-style="all">All</li>
+					<li data-style="serif">Serif</li>
+					<li data-style="sans-serif">Sans-Serif</li>
+					<li data-style="">Display</li>
+					<li data-style="">Handwritting</li>
+				</ul>
+			</li>
+			<li class="font-size">
+				<i class="fa fa-font"></i> <span>16px</span>
+				<input type="range" id="font-size-range" max="48" min="8" value="16">
+			</li>
+			<li class="line-height">
+				<i class="fa fa-text-height"></i> <span>2em</span>
+				<input type="range" id="line-height-range" max="100" min="0" value="2">
+			</li>
+			<li class="theme">
+				<div class="cf">
+					<i class="fa fa-moon-o"></i>
+					<i class="fa fa-sun-o selected"></i>
+				</div>
+			</li>
+		</ul>
+	</script>
+
+
 	<script type="text/template" id="font-css">
 		@font-face {
 			font-family: <%= family %>;
@@ -91,4 +85,18 @@
 			<% }); %>
 		</ul>
 	</script>
+
+	<script type="text/tempalte" id="fontwall-item-template">
+		<div class="font"
+		    style="font-family: <%= family %>">
+			<%= family %>
+		</div>
+	</script>
+
+	<script type="text/tempalte" id="fontwall-layout-template">
+		<div class="wall"></div>
+		<div id="scrollDetector"></div>
+	</script>
+
+	<script data-main="js/main" src="http://requirejs.org/docs/release/2.1.17/minified/require.js"></script>
 </body>

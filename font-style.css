@@ -49,9 +49,14 @@ h4 {
 }
 
 .page-wrap {
-	width: 700px;
 	height: 100%;
 	margin: 0 auto;
+}
+
+.paragraph-wrap {
+	width: 700px;
+	margin: 0 auto;
+
 }
 
 .carousel-wrap {
@@ -178,21 +183,31 @@ h4 {
 	padding: 8px;
 }
 
-.preview-text {
+.paragraph {
 	max-width: 550px;
 	margin: 0 auto;
 	margin-top: 60px;
 }
 
-.preview-text p {
+.paragraph p {
   text-align: left;
   margin-bottom: 12px;
   font-size: 16px;
   line-height: 19px;
 }
 
-.preview-text .first-paragraph::first-letter {
+.paragraph .first-paragraph::first-letter {
 	font-size: 200%;
+}
+
+.wall {
+	max-width: 1020px;
+}
+
+.wall .font {
+	float: left;
+	font-size: 48px;
+	padding: 10px;
 }
 
 
